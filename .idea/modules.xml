@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/palembang_mengaji.iml" filepath="$PROJECT_DIR$/palembang_mengaji.iml" />
+      <module fileurl="file://$PROJECT_DIR$/palembang_mengaji_android.iml" filepath="$PROJECT_DIR$/palembang_mengaji_android.iml" />
+    </modules>
+  </component>
+</project>
