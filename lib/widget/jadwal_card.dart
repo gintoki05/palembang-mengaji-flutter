@@ -14,18 +14,29 @@ class JadwalList extends StatelessWidget {
         assert(gambar != null),
         super(key: key);
 
+  void _navigateToHariPage(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute<Null>(
+      builder: (BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            elevation: 1.0,
+            title: Text(
+              judul,
+            ),
+          ),
+          body: HariDetails(),
+        );
+      },
+    ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
         padding: EdgeInsets.all(5.0),
         child: Center(
-            child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) => HariDetails()));
-                },
+            child: InkWell(
+                onTap: () => _navigateToHariPage(context),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[

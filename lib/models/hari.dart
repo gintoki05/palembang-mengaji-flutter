@@ -9,7 +9,7 @@ class Hari {
   final String tema;
   final String kategori;
 
-  Hari(
+ const Hari(
       {@required this.image,
       @required this.tanggal,
       @required this.masjid,
