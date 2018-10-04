@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../widget/jadwal_card.dart';
 
-import '../models/hari.dart';
-
 class JadwalPage extends StatelessWidget {
   const JadwalPage();
 
