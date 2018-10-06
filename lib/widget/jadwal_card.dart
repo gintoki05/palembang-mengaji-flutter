@@ -18,12 +18,7 @@ class JadwalList extends StatelessWidget {
     Navigator.of(context).push(MaterialPageRoute<Null>(
       builder: (BuildContext context) {
         return Scaffold(
-          appBar: AppBar(
-            elevation: 1.0,
-            title: Text(
-              judul,
-            ),
-          ),
+
           body: HariDetails(),
         );
       },
