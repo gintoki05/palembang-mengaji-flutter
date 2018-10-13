@@ -26,6 +26,45 @@ class MyApp extends StatelessWidget {
               body: TabBarView(
                 children: <Widget>[JadwalPage(), InfoPage(), LokasiPage()],
               ),
+              drawer: Drawer(
+                child: ListView(
+                  padding: EdgeInsets.zero,
+                  children: <Widget>[
+                    DrawerHeader(
+                      child: Text('Palembang Mengaji'),
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                      ),
+                    ),
+                    ListTile(
+                      title: Text('Sumsel Mengaji'),
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                    ),ListTile(
+                      title: Text('Sumsel Ponpes'),
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                    ),ListTile(
+                      title: Text('Jadwal Lengkap'),
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                    ),ListTile(
+                      title: Text('Loker'),
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                    ),ListTile(
+                      title: Text('Tentang'),
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ],
+                ),
+              ),
             )));
   }
 }

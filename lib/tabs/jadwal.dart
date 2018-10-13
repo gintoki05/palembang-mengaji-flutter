@@ -15,6 +15,16 @@ class JadwalPage extends StatelessWidget {
     'assets/ahadlist.png',
   ];
 
+  static const _url = <String>[
+    "http://palembangmengaji.forkismapalembang.com/gambar/hari/senin.png",
+    "http://palembangmengaji.forkismapalembang.com/gambar/hari/selasa.png",
+    "http://palembangmengaji.forkismapalembang.com/gambar/hari/rabu.png",
+    "http://palembangmengaji.forkismapalembang.com/gambar/hari/kamis.png",
+    "http://palembangmengaji.forkismapalembang.com/gambar/hari/jumat.png",
+    "http://palembangmengaji.forkismapalembang.com/gambar/hari/sabtu.png",
+    "http://palembangmengaji.forkismapalembang.com/gambar/hari/ahad.png"
+  ];
+
   static const _judul = <String>[
     'Senin',
     'Selasa',
@@ -25,6 +35,15 @@ class JadwalPage extends StatelessWidget {
     'Ahad'
   ];
 
+  static const _hari = <String>[
+    'http://palembangmengaji.forkismapalembang.com/api.php?hari=senin',
+    'http://palembangmengaji.forkismapalembang.com/api.php?hari=selasa',
+    'http://palembangmengaji.forkismapalembang.com/api.php?hari=rabu',
+    'http://palembangmengaji.forkismapalembang.com/api.php?hari=kamis',
+    'http://palembangmengaji.forkismapalembang.com/api.php?hari=jumat',
+    'http://palembangmengaji.forkismapalembang.com/api.php?hari=sabtu',
+    'http://palembangmengaji.forkismapalembang.com/api.php?hari=ahad',
+  ];
 
   Widget _buildJadwalWidget(List<Widget> jadwals) {
     return ListView.builder(
@@ -41,6 +60,8 @@ class JadwalPage extends StatelessWidget {
       jadwals.add(JadwalList(
         gambar: _gambar[i],
         judul: _judul[i],
+        url: _url[i],
+        hari: _hari[i],
       ));
     }
 

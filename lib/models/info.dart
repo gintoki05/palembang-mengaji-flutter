@@ -14,3 +14,4 @@ class Info {
       this.tanggal,
       this.foto});
 }
+
