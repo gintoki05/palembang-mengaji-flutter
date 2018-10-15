@@ -60,8 +60,23 @@ flutter:
   fonts:
     - family: Oswald
       fonts:
-        - asset: assets/Oswald-Bold.ttf
+        - asset: assets/fonts/Oswald-Bold.ttf
           weight: 700
+    - family: Quicksand-Regular
+      fonts:
+        - asset: assets/fonts/Quicksand-Regular.otf
+    - family: Montserrat-Regular
+      fonts:
+        - asset: assets/fonts/Montserrat-Regular.otf
+    - family: OpenSans-Regular
+      fonts:
+        - asset: assets/fonts/OpenSans-Regular.ttf
+    - family: Roboto-Black
+      fonts:
+        - asset: assets/fonts/Roboto-Black.ttf
+    - family: Pacifico
+      fonts:
+        - asset: assets/fonts/Pacifico.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
