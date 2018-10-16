@@ -36,7 +36,7 @@ class SumselPonpes extends StatelessWidget {
               leading: Icon(Icons.home),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                       builder: (BuildContext context) => HomeScreen()),
@@ -48,18 +48,11 @@ class SumselPonpes extends StatelessWidget {
               leading: Icon(Icons.dashboard),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                       builder: (BuildContext context) => SumselMengaji()),
                 );
-              },
-            ),
-            ListTile(
-              title: Text('Sumsel Ponpes'),
-              leading: Icon(Icons.account_balance),
-              onTap: () {
-                Navigator.pop(context);
               },
             ),
             ListTile(

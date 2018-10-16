@@ -119,7 +119,7 @@ class JadwalList extends StatelessWidget {
                                       child: Text(
                                         snapshot.data[index].masjid,
                                         style: new TextStyle(
-                                            fontFamily: 'Quicksand-Regular'),
+                                            fontFamily: 'Merriweather-Regular'),
                                       ),
                                     ),
                                   )
@@ -139,7 +139,7 @@ class JadwalList extends StatelessWidget {
                                       child: Text(
                                         snapshot.data[index].waktu,
                                         style: new TextStyle(
-                                            fontFamily: 'Quicksand-Regular'),
+                                            fontFamily: 'Merriweather-Regular'),
                                       ),
                                     ),
                                   )
@@ -159,7 +159,7 @@ class JadwalList extends StatelessWidget {
                                       child: Text(
                                         snapshot.data[index].pengisi,
                                         style: new TextStyle(
-                                            fontFamily: 'Quicksand-Regular'),
+                                            fontFamily: 'Merriweather-Regular'),
                                       ),
                                     ),
                                   )
@@ -179,7 +179,7 @@ class JadwalList extends StatelessWidget {
                                       child: Text(
                                         snapshot.data[index].tema,
                                         style: new TextStyle(
-                                            fontFamily: 'Pacifico'),
+                                            fontFamily: 'Merriweather-Regular'),
                                       ),
                                     ),
                                   )
@@ -199,7 +199,7 @@ class JadwalList extends StatelessWidget {
                                       child: Text(
                                         snapshot.data[index].kategori,
                                         style: new TextStyle(
-                                            fontFamily: 'Quicksand-Regular'),
+                                            fontFamily: 'Merriweather-Regular'),
                                       ),
                                     ),
                                   )
@@ -245,7 +245,8 @@ class JadwalList extends StatelessWidget {
                                     judul,
                                     style: TextStyle(
                                         fontSize: 20.0,
-                                        fontFamily: 'Oswald',
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'LibreFranklin-Medium',
                                         color: Colors.blue),
                                   )
                                 ],

@@ -77,6 +77,12 @@ flutter:
     - family: Pacifico
       fonts:
         - asset: assets/fonts/Pacifico.ttf
+    - family: Merriweather-Regular
+      fonts:
+        - asset: assets/fonts/Merriweather-Regular.ttf
+    - family: LibreFranklin-Medium
+      fonts:
+        - asset: assets/fonts/LibreFranklin-Medium.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
