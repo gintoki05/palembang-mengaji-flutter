@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:map_view/map_view.dart';
 
 import './tabs/jadwal.dart';
 import './tabs/info.dart';
@@ -7,11 +6,13 @@ import './tabs/lokasi.dart';
 
 import './fragments/sumsel_mengaji.dart';
 import './fragments/sumsel_ponpes.dart';
+import './fragments/jadwal_lengkap.dart';
+import './fragments/loker.dart';
+import './fragments/tentang.dart';
 
 const API_KEY = "AIzaSyB4Lzd6JAQbbKG3EESAXuVU_K7u39wvBqU";
 
 void main() {
-  MapView.setApiKey(API_KEY);
   runApp(new MyApp());
 }
 
@@ -59,8 +60,8 @@ class HomeScreen extends StatelessWidget {
                       )),
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image:
-                          new NetworkImage("https://i.imgur.com/Wp6YYwC.jpg"),
+                      image: NetworkImage(
+                          "http://palembangmengaji.forkismapalembang.com/gambar/kajian.jpg"),
                       fit: BoxFit.cover,
                     ),
                     color: Colors.white,
@@ -95,6 +96,11 @@ class HomeScreen extends StatelessWidget {
                   leading: Icon(Icons.view_list),
                   onTap: () {
                     Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => JadwalLengkap()),
+                    );
                   },
                 ),
                 ListTile(
@@ -102,6 +108,11 @@ class HomeScreen extends StatelessWidget {
                   leading: Icon(Icons.business),
                   onTap: () {
                     Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => Loker()),
+                    );
                   },
                 ),
                 ListTile(
@@ -109,6 +120,11 @@ class HomeScreen extends StatelessWidget {
                   leading: Icon(Icons.touch_app),
                   onTap: () {
                     Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => Tentang()),
+                    );
                   },
                 ),
               ],

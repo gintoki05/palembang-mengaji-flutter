@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../main.dart';
 import './sumsel_mengaji.dart';
-import './jadwal_lengkap.dart';
+import './sumsel_ponpes.dart';
 import './loker.dart';
-import './tentang.dart';
+import './jadwal_lengkap.dart';
 
-import '../widget/sumsel_ponpes.dart';
-
-class SumselPonpes extends StatelessWidget {
+class Tentang extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,8 +28,7 @@ class SumselPonpes extends StatelessWidget {
                   )),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: new NetworkImage(
-                      "http://palembangmengaji.forkismapalembang.com/gambar/kajian.jpg"),
+                  image: new NetworkImage("https://i.imgur.com/Wp6YYwC.jpg"),
                   fit: BoxFit.cover,
                 ),
                 color: Colors.white,
@@ -62,6 +59,18 @@ class SumselPonpes extends StatelessWidget {
               },
             ),
             ListTile(
+              title: Text('Sumsel Ponpes'),
+              leading: Icon(Icons.account_balance),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => SumselPonpes()),
+                );
+              },
+            ),
+            ListTile(
               title: Text('Jadwal Lengkap'),
               leading: Icon(Icons.view_list),
               onTap: () {
@@ -84,25 +93,13 @@ class SumselPonpes extends StatelessWidget {
                 );
               },
             ),
-            ListTile(
-              title: Text('Tentang'),
-              leading: Icon(Icons.touch_app),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => Tentang()),
-                );
-              },
-            ),
           ],
         ),
       ),
       appBar: new AppBar(
-        title: new Text("Sumsel Ponpes"),
+        title: new Text("Tentang"),
       ),
-      body: PonpesSumsel(),
+      body: new Text("I belongs to Second Page"),
     );
   }
 }

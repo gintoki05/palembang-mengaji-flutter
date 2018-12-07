@@ -1,50 +1,114 @@
 import 'package:flutter/material.dart';
-import 'package:map_view/map_view.dart';
+
+import '../maps/lokasi_detail.dart';
 
 class LokasiPage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
-    return _LokasiPageState();
-  }
+  _LokasiPageState createState() => _LokasiPageState();
 }
 
 class _LokasiPageState extends State<LokasiPage> {
-  Uri _staticMapUri;
-  final FocusNode _addressInputFocusNode = FocusNode();
+  List<Container> daftarMasjid = List();
+
+  var masjid = [
+    {
+      "nama": "Masjid Bakti",
+      "gambar":
+          "http://palembangmengaji.forkismapalembang.com/gambar/kajian.jpg",
+      "lat": -2.939352,
+      "lng": 104.729342
+    },
+    {
+      "nama": "Masjid Imam Syafii",
+      "gambar":
+          "http://palembangmengaji.forkismapalembang.com/gambar/kajian.jpg",
+      "lat": -2.939352,
+      "lng": 104.729342
+    },
+    {
+      "nama": "Masjid Bakti",
+      "gambar":
+          "http://palembangmengaji.forkismapalembang.com/gambar/kajian.jpg",
+      "lat": -2.939352,
+      "lng": 104.729342
+    },
+    {
+      "nama": "Masjid Bakti",
+      "gambar":
+          "http://palembangmengaji.forkismapalembang.com/gambar/kajian.jpg",
+      "lat": -2.939352,
+      "lng": 104.729342
+    },
+    {
+      "nama": "Masjid Bakti",
+      "gambar":
+          "http://palembangmengaji.forkismapalembang.com/gambar/kajian.jpg",
+      "lat": -2.939352,
+      "lng": 104.729342
+    },
+    {
+      "nama": "Masjid Bakti",
+      "gambar":
+          "http://palembangmengaji.forkismapalembang.com/gambar/kajian.jpg",
+      "lat": -2.939352,
+      "lng": 104.729342
+    },
+  ];
+
+  _buatlist() async {
+    for (var i = 0; i < masjid.length; i++) {
+      final masjidnya = masjid[i];
+      final String gambar = masjidnya["gambar"];
+
+      daftarMasjid.add(
+        Container(
+          padding: EdgeInsets.all(10.0),
+          child: Card(
+            child: Column(
+              children: <Widget>[
+                GestureDetector(
+                  child: Material(
+                    child: InkWell(
+                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                            builder: (BuildContext context) => LokasiDetail(
+                                nama: masjidnya['nama'],
+                                lat: masjidnya['lat'],
+                                lng: masjidnya['lng']),
+                          )),
+                      child: Image.network(
+                        "$gambar",
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0)),
+                Container(
+                    child: Text(
+                      masjidnya['nama'],
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 13.0),
+                    ),
+                    alignment: Alignment.center)
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+  }
 
   @override
   void initState() {
-    _addressInputFocusNode.addListener(_updateLocation);
-    getStaticMap();
+    _buatlist();
     super.initState();
   }
 
   @override
-  void dispose() {
-    _addressInputFocusNode.removeListener(_updateLocation);
-    super.dispose();
-  }
-
-  void getStaticMap() {
-    final StaticMapProvider staticMapViewProvider =
-        StaticMapProvider('AIzaSyB4Lzd6JAQbbKG3EESAXuVU_K7u39wvBqU');
-    final Uri staticMapUri = staticMapViewProvider.getStaticUriWithMarkers(
-        [Marker('position', 'Position', -2.939255, 104.729347)],
-        center: Location(-2.939255, 104.729347),
-        width: 500,
-        height: 300,
-        maptype: StaticMapViewType.roadmap);
-    setState(() {
-      _staticMapUri = staticMapUri;
-    });
-  }
-
-  void _updateLocation() {}
-
-  @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[Image.network(_staticMapUri.toString())],
+    return GridView.count(
+      crossAxisCount: 2,
+      children: daftarMasjid,
     );
   }
 }

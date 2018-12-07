@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../main.dart';
 import './sumsel_mengaji.dart';
-import './jadwal_lengkap.dart';
+import './sumsel_ponpes.dart';
 import './loker.dart';
 import './tentang.dart';
 
-import '../widget/sumsel_ponpes.dart';
-
-class SumselPonpes extends StatelessWidget {
+class JadwalLengkap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,14 +60,14 @@ class SumselPonpes extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text('Jadwal Lengkap'),
-              leading: Icon(Icons.view_list),
+              title: Text('Sumsel Ponpes'),
+              leading: Icon(Icons.account_balance),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                      builder: (BuildContext context) => JadwalLengkap()),
+                      builder: (BuildContext context) => SumselPonpes()),
                 );
               },
             ),
@@ -100,9 +98,9 @@ class SumselPonpes extends StatelessWidget {
         ),
       ),
       appBar: new AppBar(
-        title: new Text("Sumsel Ponpes"),
+        title: new Text("Jadwal Lengkap"),
       ),
-      body: PonpesSumsel(),
+      body: new Text("I belongs to Second Page"),
     );
   }
 }

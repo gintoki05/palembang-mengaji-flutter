@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../main.dart';
 import './sumsel_mengaji.dart';
+import './sumsel_ponpes.dart';
 import './jadwal_lengkap.dart';
-import './loker.dart';
 import './tentang.dart';
 
-import '../widget/sumsel_ponpes.dart';
-
-class SumselPonpes extends StatelessWidget {
+class Loker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,6 +60,18 @@ class SumselPonpes extends StatelessWidget {
               },
             ),
             ListTile(
+              title: Text('Sumsel Ponpes'),
+              leading: Icon(Icons.account_balance),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => SumselPonpes()),
+                );
+              },
+            ),
+            ListTile(
               title: Text('Jadwal Lengkap'),
               leading: Icon(Icons.view_list),
               onTap: () {
@@ -70,17 +80,6 @@ class SumselPonpes extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (BuildContext context) => JadwalLengkap()),
-                );
-              },
-            ),
-            ListTile(
-              title: Text('Loker'),
-              leading: Icon(Icons.business),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (BuildContext context) => Loker()),
                 );
               },
             ),
@@ -100,9 +99,9 @@ class SumselPonpes extends StatelessWidget {
         ),
       ),
       appBar: new AppBar(
-        title: new Text("Sumsel Ponpes"),
+        title: new Text("Lowongan Kerja"),
       ),
-      body: PonpesSumsel(),
+      body: new Text("I belongs to Second Page"),
     );
   }
 }

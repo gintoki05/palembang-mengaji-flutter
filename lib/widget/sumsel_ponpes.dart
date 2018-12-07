@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../pages/kajian_details.dart';
+import '../pages/ponpes_details.dart';
 
-class KajianSumsel extends StatefulWidget {
+class PonpesSumsel extends StatefulWidget {
   @override
-  _KajianSumselState createState() => _KajianSumselState();
+  _PonpesSumselState createState() => _PonpesSumselState();
 }
 
-class _KajianSumselState extends State<KajianSumsel> {
-  List<Container> daftarKajian = List();
+class _PonpesSumselState extends State<PonpesSumsel> {
+  List<Container> daftarPonpes = List();
 
-  var kajian = [
+  var ponpes = [
     {
       "nama": "Prabumulih",
       "gambar":
@@ -44,11 +44,11 @@ class _KajianSumselState extends State<KajianSumsel> {
   ];
 
   _buatlist() async {
-    for (var i = 0; i < kajian.length; i++) {
-      final kajiannya = kajian[i];
-      final String gambar = kajiannya["gambar"];
+    for (var i = 0; i < ponpes.length; i++) {
+      final ponpesnya = ponpes[i];
+      final String gambar = ponpesnya["gambar"];
 
-      daftarKajian.add(
+      daftarPonpes.add(
         Container(
           padding: EdgeInsets.all(10.0),
           child: Card(
@@ -58,8 +58,8 @@ class _KajianSumselState extends State<KajianSumsel> {
                   child: Material(
                     child: InkWell(
                       onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                            builder: (BuildContext context) => KajianDetail(
-                                  nama: kajiannya['nama'],
+                            builder: (BuildContext context) => PonpesDetail(
+                                  nama: ponpesnya['nama'],
                                 ),
                           )),
                       child: Image.network(
@@ -72,7 +72,7 @@ class _KajianSumselState extends State<KajianSumsel> {
                 Padding(padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0)),
                 Container(
                     child: Text(
-                      kajiannya['nama'],
+                      ponpesnya['nama'],
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 13.0),
                     ),
@@ -95,7 +95,7 @@ class _KajianSumselState extends State<KajianSumsel> {
   Widget build(BuildContext context) {
     return GridView.count(
       crossAxisCount: 2,
-      children: daftarKajian,
+      children: daftarPonpes,
     );
   }
 }

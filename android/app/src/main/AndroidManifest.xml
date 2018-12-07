@@ -31,13 +31,15 @@
             <meta-data
                 android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
                 android:value="true" />
-            <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyB4Lzd6JAQbbKG3EESAXuVU_K7u39wvBqU"/>
-            <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+
+            <meta-data 
+                android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyAA1sVjuG_P__17srtmXHqZyRkKyIa9q7c"/>
+           
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.apptreesoftware.mapview.MapActivity" android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
     </application>
 </manifest>

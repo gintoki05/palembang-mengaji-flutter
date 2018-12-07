@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import '../main.dart';
 import '../widget/sumsel_mengaji.dart';
 import './sumsel_ponpes.dart';
+import './jadwal_lengkap.dart';
+import './loker.dart';
+import './tentang.dart';
 
 class SumselMengaji extends StatelessWidget {
   @override
@@ -26,7 +29,8 @@ class SumselMengaji extends StatelessWidget {
                     )),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: new NetworkImage("https://i.imgur.com/Wp6YYwC.jpg"),
+                    image: new NetworkImage(
+                        "http://palembangmengaji.forkismapalembang.com/gambar/kajian.jpg"),
                     fit: BoxFit.cover,
                   ),
                   color: Colors.white,
@@ -61,6 +65,11 @@ class SumselMengaji extends StatelessWidget {
                 leading: Icon(Icons.view_list),
                 onTap: () {
                   Navigator.pop(context);
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => JadwalLengkap()),
+                  );
                 },
               ),
               ListTile(
@@ -68,6 +77,11 @@ class SumselMengaji extends StatelessWidget {
                 leading: Icon(Icons.business),
                 onTap: () {
                   Navigator.pop(context);
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => Loker()),
+                  );
                 },
               ),
               ListTile(
@@ -75,6 +89,11 @@ class SumselMengaji extends StatelessWidget {
                 leading: Icon(Icons.touch_app),
                 onTap: () {
                   Navigator.pop(context);
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => Tentang()),
+                  );
                 },
               ),
             ],
