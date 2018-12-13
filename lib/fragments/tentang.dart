@@ -6,6 +6,8 @@ import './sumsel_ponpes.dart';
 import './loker.dart';
 import './jadwal_lengkap.dart';
 
+import '../pages/tentang_details.dart';
+
 class Tentang extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,8 @@ class Tentang extends StatelessWidget {
                   )),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: new NetworkImage("https://i.imgur.com/Wp6YYwC.jpg"),
+                  image: new NetworkImage(
+                      "http://palembangmengaji.forkismapalembang.com/gambar/kajian.jpg"),
                   fit: BoxFit.cover,
                 ),
                 color: Colors.white,
@@ -82,24 +85,24 @@ class Tentang extends StatelessWidget {
                 );
               },
             ),
-            ListTile(
-              title: Text('Loker'),
-              leading: Icon(Icons.business),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (BuildContext context) => Loker()),
-                );
-              },
-            ),
+            // ListTile(
+            //   title: Text('Loker'),
+            //   leading: Icon(Icons.business),
+            //   onTap: () {
+            //     Navigator.pop(context);
+            //     Navigator.pushReplacement(
+            //       context,
+            //       MaterialPageRoute(builder: (BuildContext context) => Loker()),
+            //     );
+            //   },
+            // ),
           ],
         ),
       ),
       appBar: new AppBar(
         title: new Text("Tentang"),
       ),
-      body: new Text("I belongs to Second Page"),
+      body: TentangDetail(),
     );
   }
 }

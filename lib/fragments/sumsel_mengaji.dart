@@ -72,18 +72,18 @@ class SumselMengaji extends StatelessWidget {
                   );
                 },
               ),
-              ListTile(
-                title: Text('Loker'),
-                leading: Icon(Icons.business),
-                onTap: () {
-                  Navigator.pop(context);
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (BuildContext context) => Loker()),
-                  );
-                },
-              ),
+              // ListTile(
+              //   title: Text('Loker'),
+              //   leading: Icon(Icons.business),
+              //   onTap: () {
+              //     Navigator.pop(context);
+              //     Navigator.pushReplacement(
+              //       context,
+              //       MaterialPageRoute(
+              //           builder: (BuildContext context) => Loker()),
+              //     );
+              //   },
+              // ),
               ListTile(
                 title: Text('Tentang'),
                 leading: Icon(Icons.touch_app),

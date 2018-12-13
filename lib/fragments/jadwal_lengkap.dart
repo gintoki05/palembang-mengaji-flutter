@@ -6,6 +6,8 @@ import './sumsel_ponpes.dart';
 import './loker.dart';
 import './tentang.dart';
 
+import '../pages/jadwal_lengkaps.dart';
+
 class JadwalLengkap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -71,17 +73,17 @@ class JadwalLengkap extends StatelessWidget {
                 );
               },
             ),
-            ListTile(
-              title: Text('Loker'),
-              leading: Icon(Icons.business),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (BuildContext context) => Loker()),
-                );
-              },
-            ),
+            // ListTile(
+            //   title: Text('Loker'),
+            //   leading: Icon(Icons.business),
+            //   onTap: () {
+            //     Navigator.pop(context);
+            //     Navigator.pushReplacement(
+            //       context,
+            //       MaterialPageRoute(builder: (BuildContext context) => Loker()),
+            //     );
+            //   },
+            // ),
             ListTile(
               title: Text('Tentang'),
               leading: Icon(Icons.touch_app),
@@ -97,10 +99,7 @@ class JadwalLengkap extends StatelessWidget {
           ],
         ),
       ),
-      appBar: new AppBar(
-        title: new Text("Jadwal Lengkap"),
-      ),
-      body: new Text("I belongs to Second Page"),
+      body: JadwalLengkaps(),
     );
   }
 }

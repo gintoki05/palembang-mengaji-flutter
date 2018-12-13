@@ -1,25 +1,19 @@
 import 'package:flutter/material.dart';
-
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_html_view/flutter_html_view.dart';
 
 class PonpesDetail extends StatefulWidget {
   final String foto;
   final String judul;
-  final String deskripsi;
+  final String jadwal;
   final String lokasi;
-  final double lat;
-  final double lng;
 
-  PonpesDetail(
-      {this.foto, this.judul, this.deskripsi, this.lokasi, this.lat, this.lng});
+  PonpesDetail({this.foto, this.judul, this.jadwal, this.lokasi});
 
   @override
   State createState() => PonpesDetailState();
 }
 
 class PonpesDetailState extends State<PonpesDetail> {
-  GoogleMapController mapController;
   // final _scaffoldKey = new GlobalKey<ScaffoldState>();
   // VoidCallback _showPersBottomSheetCallBack;
 
@@ -64,15 +58,8 @@ class PonpesDetailState extends State<PonpesDetail> {
       body: ListView(
         children: <Widget>[
           Container(
-            height: 250.0,
-            width: double.infinity,
-            child: GoogleMap(
-              onMapCreated: _onMapCreated,
-              options: GoogleMapOptions(
-                cameraPosition: CameraPosition(
-                    target: LatLng(widget.lat, widget.lng), zoom: 13.0),
-              ),
-            ),
+            child: Image.network(widget.foto, fit: BoxFit.cover),
+            height: 240.0,
           ),
           Container(
             child: Row(
@@ -88,36 +75,6 @@ class PonpesDetailState extends State<PonpesDetail> {
                         fontWeight: FontWeight.bold),
                   ),
                 ),
-                Container(
-                  alignment: Alignment.bottomRight,
-                  margin: EdgeInsets.fromLTRB(0.0, 20.0, 10.0, 0.0),
-                  child: FloatingActionButton.extended(
-                    icon: Icon(
-                      Icons.place,
-                    ),
-                    label: Text('Tap'),
-                    onPressed: mapController == null
-                        ? null
-                        : () {
-                            mapController
-                                .animateCamera(CameraUpdate.newCameraPosition(
-                              CameraPosition(
-                                // bearing: 270.0,
-                                target: LatLng(widget.lat, widget.lng),
-                                tilt: 30.0,
-                                zoom: 17.0,
-                              ),
-                            ));
-                            mapController.addMarker(
-                              MarkerOptions(
-                                position: LatLng(widget.lat, widget.lng),
-                                infoWindowText: InfoWindowText(widget.judul,
-                                    "Klik ikon map di sudut kanan bawah"),
-                              ),
-                            );
-                          },
-                  ),
-                )
               ],
             ),
           ),
@@ -128,19 +85,13 @@ class PonpesDetailState extends State<PonpesDetail> {
           ),
           Container(
             margin: EdgeInsets.all(10.0),
-            child: HtmlView(data: widget.deskripsi),
-          ),
+            child: HtmlView(data: widget.jadwal),
+          )
           // RaisedButton(
           //   onPressed: _showPersBottomSheetCallBack,
           // )
         ],
       ),
     );
-  }
-
-  void _onMapCreated(GoogleMapController controller) {
-    setState(() {
-      mapController = controller;
-    });
   }
 }

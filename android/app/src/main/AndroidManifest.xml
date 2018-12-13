@@ -17,6 +17,10 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="palembang_mengaji"
         android:icon="@mipmap/ic_launcher">
+        <meta-data 
+                android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyCq6G7RYZXoYvukkaMG_ilb9h32FNfQnyQ"/>
+           
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
@@ -32,10 +36,7 @@
                 android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
                 android:value="true" />
 
-            <meta-data 
-                android:name="com.google.android.geo.API_KEY"
-                android:value="AIzaSyAA1sVjuG_P__17srtmXHqZyRkKyIa9q7c"/>
-           
+            
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
