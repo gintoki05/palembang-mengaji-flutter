@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_html_view/flutter_html_view.dart';
 
 import '../models/info.dart';
 import '../api/info.dart';
@@ -44,18 +45,18 @@ class _InfoPageState extends State<InfoPage> {
                                           fontWeight: FontWeight.bold,
                                           fontSize: 15.0)),
                                 ),
-                                Container(
-                                    padding: EdgeInsets.fromLTRB(
-                                        10.0, 5.0, 0.0, 15.0),
-                                    child: Text(
-                                      snapshot.data[index].deskripsi,
-                                      style:
-                                          new TextStyle(fontFamily: 'Georgia'),
-                                      overflow: TextOverflow.ellipsis,
-                                    )),
+                                // Container(
+                                //     padding: EdgeInsets.fromLTRB(
+                                //         10.0, 5.0, 0.0, 15.0),
+                                //     child: Text(
+                                //       snapshot.data[index].deskripsi,
+                                //       style:
+                                //           new TextStyle(fontFamily: 'Georgia'),
+                                //       overflow: TextOverflow.ellipsis,
+                                //     )),
                                 Container(
                                   padding:
-                                      EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 0.0),
+                                      EdgeInsets.fromLTRB(10.0, 20.0, 0.0, 0.0),
                                   child: Text(
                                     snapshot.data[index].tanggal,
                                     style: new TextStyle(fontSize: 10.0),

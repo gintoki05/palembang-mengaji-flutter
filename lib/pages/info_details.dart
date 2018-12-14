@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_html_view/flutter_html_view.dart';
 
 import '../models/info.dart';
 
@@ -30,10 +31,8 @@ class InfoDetails extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.fromLTRB(8.0, 2.0, 8.0, 1.0),
-              child: Text(
-                '${info.deskripsi}',
-                style: TextStyle(fontFamily: 'Garamont', fontSize: 15.0),
-                textAlign: TextAlign.justify,
+              child: HtmlView(
+                data: '${info.deskripsi}',
               ),
             )
           ],

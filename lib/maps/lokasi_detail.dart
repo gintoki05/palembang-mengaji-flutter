@@ -128,7 +128,7 @@ class LokasiDetailState extends State<LokasiDetail> {
             child: Text(widget.lokasi),
           ),
           Container(
-            margin: EdgeInsets.all(10.0),
+            margin: EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 0.0),
             child: Text(
               'Jadwal Lengkap',
               style: TextStyle(
@@ -138,7 +138,6 @@ class LokasiDetailState extends State<LokasiDetail> {
             ),
           ),
           Container(
-            margin: EdgeInsets.all(10.0),
             child: HtmlView(data: widget.jadwal),
           )
           // RaisedButton(

@@ -84,7 +84,7 @@ class PonpesDetailState extends State<PonpesDetail> {
             child: Text(widget.lokasi),
           ),
           Container(
-            margin: EdgeInsets.all(10.0),
+            margin: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
             child: HtmlView(data: widget.jadwal),
           )
           // RaisedButton(
