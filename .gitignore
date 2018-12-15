@@ -7,3 +7,7 @@
 build/
 
 .flutter-plugins
+
+key.properties
+
+google-services.json

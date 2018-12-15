@@ -1,4 +1,4 @@
-package com.example.palembangmengaji;
+package com.mitkonsultan.palembangmengaji;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
