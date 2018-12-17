@@ -39,7 +39,7 @@ class TentangDetail extends StatelessWidget {
                         backgroundColor: Colors.grey.shade800,
                         radius: 15.0,
                         child: Text(
-                          'v2.2',
+                          'v2.2.2',
                           style: TextStyle(fontSize: 10.0, color: Colors.white),
                         ),
                       ),

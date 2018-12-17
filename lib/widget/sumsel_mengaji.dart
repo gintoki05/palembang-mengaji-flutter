@@ -92,14 +92,19 @@ class PhotosList extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0)),
-                Container(
-                    child: Text(
-                      photos[index].judul,
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 13.0),
-                    ),
-                    alignment: Alignment.center)
+                Padding(
+                  padding: EdgeInsets.all(4.0),
+                ),
+                Expanded(
+                  child: Text(
+                    photos[index].judul,
+                    style:
+                    TextStyle(fontWeight: FontWeight.bold, fontSize: 13.0),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                    textAlign: TextAlign.center,
+                  ),
+                )
               ],
             ),
           ),

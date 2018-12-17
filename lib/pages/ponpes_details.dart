@@ -75,11 +75,10 @@ class PonpesDetailState extends State<PonpesDetail> {
             ),
           ),
           Container(
+            margin: EdgeInsets.all(10.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Container(
-                  margin: EdgeInsets.fromLTRB(10.0, 20.0, 0.0, 0.0),
+                Expanded(
                   child: Text(
                     widget.judul,
                     style: TextStyle(
@@ -88,36 +87,33 @@ class PonpesDetailState extends State<PonpesDetail> {
                         fontWeight: FontWeight.bold),
                   ),
                 ),
-                Container(
-                  alignment: Alignment.bottomRight,
-                  margin: EdgeInsets.fromLTRB(0.0, 20.0, 10.0, 0.0),
-                  child: FloatingActionButton.extended(
-                    icon: Icon(
-                      Icons.place,
-                    ),
-                    label: Text('Tap'),
-                    onPressed: mapController == null
-                        ? null
-                        : () {
-                            mapController
-                                .animateCamera(CameraUpdate.newCameraPosition(
+                FloatingActionButton.extended(
+                  icon: Icon(
+                    Icons.place,
+                  ),
+                  label: Text('Tap'),
+                  onPressed: mapController == null
+                      ? null
+                      : () {
+                          mapController.animateCamera(
+                            CameraUpdate.newCameraPosition(
                               CameraPosition(
                                 // bearing: 270.0,
                                 target: LatLng(widget.lat, widget.lng),
                                 tilt: 30.0,
                                 zoom: 17.0,
                               ),
-                            ));
-                            mapController.addMarker(
-                              MarkerOptions(
-                                position: LatLng(widget.lat, widget.lng),
-                                infoWindowText: InfoWindowText(widget.judul,
-                                    "Klik ikon map di sudut kanan bawah"),
-                              ),
-                            );
-                          },
-                  ),
-                )
+                            ),
+                          );
+                          mapController.addMarker(
+                            MarkerOptions(
+                              position: LatLng(widget.lat, widget.lng),
+                              infoWindowText: InfoWindowText(widget.judul,
+                                  "Klik ikon map di sudut kanan bawah"),
+                            ),
+                          );
+                        },
+                ),
               ],
             ),
           ),

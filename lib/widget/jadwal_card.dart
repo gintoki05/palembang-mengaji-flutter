@@ -32,7 +32,7 @@ class JadwalList extends StatelessWidget {
   }
 
   List<Hari> createJadwalList(List data) {
-    List<Hari> list = new List();
+    List<Hari> list = List();
     for (int i = 0; i < data.length; i++) {
       String masjid = data[i]["masjid"];
       String id = data[i]["id"];
@@ -41,7 +41,7 @@ class JadwalList extends StatelessWidget {
       String tema = data[i]["tema"];
       String tanggal = data[i]["tanggal"];
       String kategori = data[i]["kategori"];
-      Hari jadwal = new Hari(
+      Hari jadwal = Hari(
           masjid: masjid,
           id: id,
           waktu: waktu,
@@ -84,19 +84,19 @@ class JadwalList extends StatelessWidget {
                   future: fetchJadwalFromAPI(),
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
-                      return new ListView.builder(
+                      return ListView.builder(
                           itemCount: snapshot.data.length,
                           itemBuilder: (context, index) {
-                            return new Card(
-                                child: new Column(
+                            return Card(
+                                child: Column(
                               children: <Widget>[
-                                new Row(children: <Widget>[
+                                Row(children: <Widget>[
                                   Expanded(
                                     child: Container(
                                       padding: EdgeInsets.all(10.0),
                                       child: Text(
                                         snapshot.data[index].tanggal,
-                                        style: new TextStyle(
+                                        style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 11.0,
                                             color: Colors.grey),
@@ -104,101 +104,101 @@ class JadwalList extends StatelessWidget {
                                     ),
                                   )
                                 ]),
-                                new Row(children: <Widget>[
-                                  new Column(
-                                    children: <Widget>[
-                                      Icon(
-                                        Icons.map,
-                                        color: Colors.blue,
-                                      ),
-                                    ],
+                                Row(children: <Widget>[
+                                  Container(
+                                    margin:
+                                        EdgeInsets.fromLTRB(6.0, 0.0, 0.0, 0.0),
+                                    child: Icon(
+                                      Icons.map,
+                                      color: Colors.blue,
+                                    ),
                                   ),
                                   Expanded(
                                     child: Container(
                                       padding: EdgeInsets.all(10.0),
                                       child: Text(
                                         snapshot.data[index].masjid,
-                                        style: new TextStyle(
+                                        style: TextStyle(
                                             fontFamily: 'Merriweather-Regular'),
                                       ),
                                     ),
                                   )
                                 ]),
-                                new Row(children: <Widget>[
-                                  new Column(
-                                    children: <Widget>[
-                                      Icon(
-                                        Icons.access_time,
-                                        color: Colors.blue,
-                                      ),
-                                    ],
+                                Row(children: <Widget>[
+                                  Container(
+                                    margin:
+                                        EdgeInsets.fromLTRB(6.0, 0.0, 0.0, 0.0),
+                                    child: Icon(
+                                      Icons.access_time,
+                                      color: Colors.blue,
+                                    ),
                                   ),
                                   Expanded(
                                     child: Container(
                                       padding: EdgeInsets.all(10.0),
                                       child: Text(
                                         snapshot.data[index].waktu,
-                                        style: new TextStyle(
+                                        style: TextStyle(
                                             fontFamily: 'Merriweather-Regular'),
                                       ),
                                     ),
                                   )
                                 ]),
-                                new Row(children: <Widget>[
-                                  new Column(
-                                    children: <Widget>[
-                                      Icon(
-                                        Icons.person,
-                                        color: Colors.blue,
-                                      ),
-                                    ],
+                                Row(children: <Widget>[
+                                  Container(
+                                    margin:
+                                        EdgeInsets.fromLTRB(6.0, 0.0, 0.0, 0.0),
+                                    child: Icon(
+                                      Icons.person,
+                                      color: Colors.blue,
+                                    ),
                                   ),
                                   Expanded(
                                     child: Container(
                                       padding: EdgeInsets.all(10.0),
                                       child: Text(
                                         snapshot.data[index].pengisi,
-                                        style: new TextStyle(
+                                        style: TextStyle(
                                             fontFamily: 'Merriweather-Regular'),
                                       ),
                                     ),
                                   )
                                 ]),
-                                new Row(children: <Widget>[
-                                  new Column(
-                                    children: <Widget>[
-                                      Icon(
-                                        Icons.book,
-                                        color: Colors.blue,
-                                      ),
-                                    ],
+                                Row(children: <Widget>[
+                                  Container(
+                                    margin:
+                                        EdgeInsets.fromLTRB(6.0, 0.0, 0.0, 0.0),
+                                    child: Icon(
+                                      Icons.book,
+                                      color: Colors.blue,
+                                    ),
                                   ),
                                   Expanded(
                                     child: Container(
                                       padding: EdgeInsets.all(10.0),
                                       child: Text(
                                         snapshot.data[index].tema,
-                                        style: new TextStyle(
+                                        style: TextStyle(
                                             fontFamily: 'Merriweather-Regular'),
                                       ),
                                     ),
                                   )
                                 ]),
-                                new Row(children: <Widget>[
-                                  new Column(
-                                    children: <Widget>[
-                                      Icon(
-                                        Icons.group_work,
-                                        color: Colors.blue,
-                                      ),
-                                    ],
+                                Row(children: <Widget>[
+                                  Container(
+                                    margin:
+                                        EdgeInsets.fromLTRB(6.0, 0.0, 0.0, 0.0),
+                                    child: Icon(
+                                      Icons.group_work,
+                                      color: Colors.blue,
+                                    ),
                                   ),
                                   Expanded(
                                     child: Container(
                                       padding: EdgeInsets.all(10.0),
                                       child: Text(
                                         snapshot.data[index].kategori,
-                                        style: new TextStyle(
+                                        style: TextStyle(
                                             fontFamily: 'Merriweather-Regular'),
                                       ),
                                     ),
@@ -208,11 +208,11 @@ class JadwalList extends StatelessWidget {
                             ));
                           });
                     } else if (snapshot.hasError) {
-                      return new Text("${snapshot.error}");
+                      return Text("${snapshot.error}");
                     }
 
 // By default, show a loading spinner
-                    return new CircularProgressIndicator();
+                    return CircularProgressIndicator();
                   },
                 ))));
       },
